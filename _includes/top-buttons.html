@@ -1,0 +1,82 @@
+<div class="on-top flex-row-wrap-gap1">
+  <ul class="flex-col-wrap-gap1 grid
+  ">
+    <li>
+      <a class="button is-small" href="{{site.data.ui.btns.oppositeLang[page.lang]link}}" title="{{site.data.ui.btns.oppositeLang[page.lang]label}}">
+        {{site.data.ui.btns.oppositeLang[page.lang].label}}
+      </a>
+    </li>
+    <li class="flex-col-wrap-gap1">
+      <div class="grid-wide-small">
+        <style>
+          .grid-wide-small {
+            display: grid;
+            grid-template-columns: 1fr 2rem;
+            gap: .3rem;
+          }
+        </style>
+        <!-- or {{ page.url  | absolute_url }} -->
+        <a class="button is-small" href="{{page.url}}online-cv" title="{{site.data.ui.btns.goToOnlineCv[page.lang]}}">
+          {{site.data.ui.btns.goToOnlineCv[page.lang]}}
+        </a>
+        <a class="button is-small" href="{{site.url}}/assets/cv_{{page.lang}}.pdf" download="webdev_araceliponce" title="{{site.data.ui.btns.fastDownloadCv[page.lang]}}">
+          {% include download-svg.html %}
+        </a>
+      </div>
+    </li>
+  </ul>
+  <ul class="flex-col-wrap-gap1 grid">
+    <li>
+      <button type="button" aria-label="Toggle theme" id="themeToggle" class="button is-small is-rounded" hidden>
+        <span class="hidden-on-dark"> {{site.data.ui.btns.useDark[page.lang]}} </span>
+        <span class="hidden-on-nodark"> {{site.data.ui.btns.useLight[page.lang]}} </span>
+      </button>
+    </li>
+    <!--       <li>
+    <button type="button" class="button is-small is-hidden-mobile" id="directionToggle" aria-label="Toggle scroll axis" hidden>
+      Filas
+    </button>
+  </li> -->
+    <li>
+      <button type="button" class="button is-small is-rounded" id="animationToggle" role="switch" aria-checked="true" hidden>
+        <span class="hidden-on-motion"> {{site.data.ui.btns.playMotion[page.lang]}} </span>
+        <span class="hidden-on-nomotion"> {{site.data.ui.btns.pauseMotion[page.lang]}} </span>
+      </button>
+    </li>
+  </ul>
+</div>
+<style>
+  .on-top {
+    --gap: .3rem;
+    z-index: 9;
+    position: relative;
+
+    justify-content: space-between;
+
+  }
+
+  @media screen and (min-width: 70rem) {
+    .on-top {
+      position: fixed;
+      left: 0;
+      right: 0;
+      padding: var(--body-padding, 2rem);
+    }
+  }
+
+  .mt {
+    margin-top: 3rem;
+  }
+
+  .almost-100vh {
+    min-height: calc(100vh - 6rem);
+    min-height: calc(100svh - 6rem);
+    /* -6rem para que haya un balance, deberían ser mt 3 + paddings (2 y 2) */
+    padding: var(--padding);
+  }
+
+  .is-small svg {
+    height: 100%;
+    stroke-width: 1.3;
+  }
+</style>

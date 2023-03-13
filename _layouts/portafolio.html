@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang={{page.lang}}>
+
+{%-include head.html-%}
+
+<body class="inicio">
+
+  {%-include first-script.html-%}
+
+  <div class="loader-container">
+
+    <div class="loader"></div>
+    <span>Araceli Ponce Sanga</span>
+    <span>Front End Developer</span>
+  </div>
+  <script>
+    document.documentElement.classList.remove('no-js'); //si no tiene js activado, la clase .no-js se mantiene
+
+    window.addEventListener('load', () => {
+      const loaderContainer = document.querySelector('.loader-container');
+      setTimeout(() => {
+        loaderContainer.classList.add('faded-out');
+      }, 300);
+    }) 
+  </script>
+
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+
+  <style>
+
+
+  </style>
+  <main class="main">
+    <section class="section flex-row-wrap-gap h-90">
+      <div class="align-self-end flex-1">
+        <!-- flex1para estirarse h -->
+        <div class="">
+          <h1 class="title">
+            <span class="name">araceli ponce sanga</span>
+            <small class=" soft-text year">- portafolio de desarrollo web 2023</small>
+          </h1>
+        </div>
+
+        <nav>
+          <ol class="flex-row-wrap-gap1 justify-c-center">
+            {%for item in site.data.content.nav[page.lang]%}
+            <li>
+              <a class="button" href="#{{item[1].id}}" title="{{item[1].title}}">{{item[1].title}}</a>
+              </a>
+            </li>
+            {%endfor%}
+          </ol>
+        </nav>
+      </div>
+    </section>
+    <div class="on-wide-sticky-top flex-row-wrap-gap w-100vw h-10">
+      <span>APS</span>
+      <div class="flex-row-wrap-gap  inline-flex msa">
+        <input id="themeToggle" class="toggle" type="checkbox" role="switch" value="on" checked="true">
+        <label for="themeToggle" class="slot">
+          <span class="slot-label">{{site.data.content.btns[page.lang]NoDark}}</span>
+          <span class="slot-label">{{site.data.content.btns[page.lang]Dark}}</span>
+        </label>
+      </div>
+      <div class="flex-row-wrap-gap inline-flex">
+        <input id="animationToggle" class="toggle" type="checkbox" role="switch" value="off">
+        <label for="animationToggle" class="slot">
+          <span class="slot-label">{{site.data.content.btns[page.lang]NoMotion}}</span>
+          <span class="slot-label">{{site.data.content.btns[page.lang]Motion}}</span>
+        </label>
+      </div>
+
+    </div>
+
+
+
+    <section class="projects w-fit-content mia" id="{{site.data.content.projectsSection[page.lang]id}}" aria-labelledby="projectsTitle">
+      <div class="sticky">
+        <h2 class="type_main projects" id="projectsTitle">
+          {{site.data.content.projectsSection[page.lang]title}}
+        </h2>
+      </div>
+
+      <ul class="flex-col-wrap-gap gap w-max-100vw">
+
+        <style>
+          img {
+            background: lightblue;
+            border: 0;
+            outline: 0;
+            aspect-ratio: 5/2;
+            width: 100%;
+          }
+
+          img:nth-of-type(2n) {
+            background: lightgreen;
+          }
+        </style>
+        {%-for item in site.data.projects-%}
+
+        <li class="project-wrapper w-max-100">
+          <div class="project has-overlay">
+            <img src="./imgs/{{item.img}}" alt="{{item.img_alt}}">
+            <h3><a href="{{item.link}}">{{item.name}}</a></h3>
+            <h4>{{item.subtitle[page.lang]}}</h4>
+            <div class="project-info">
+              <p>{{item.desc[page.lang]}}</p>
+
+              <div class="tech hides-if-motion">
+                <!--  {%-for tech in item.tech-%}
+                <span>{{tech}}</span>
+                {%-endfor-%} -->
+
+                <span>{{item.stack}}</span>
+              </div>
+              <div class="marquee hides-if-no-motion">
+                <!-- <span class="marquee-text">{{item.tech}}{{item.tech}}</span> -->
+                <span class="marquee-text">{{item.stack | replace: ", ", " - "}} - {{item.stack | replace: ", ", " - "}} - {{item.stack | replace: ", ", " - "}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        {%-endfor-%}
+      </ul>
+    </section>
+
+    <style>
+      .tech {
+        display: flex;
+        flex-flow: row wrap;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+
+      .project .marquee,
+      .tech {
+        padding: .7rem 0;
+
+      }
+    </style>
+
+    <section class="section childs-tall-as-parent h-90" id="{{site.data.content.infoSection[page.lang]id}}" aria-labelledby="infoTitle">
+      <div class="big-column-small-fixed-column">
+        <div class="big-column align-self-end">
+          <div class="">
+            <h2 class="title" id="infoTitle">{{site.data.content.infoSection[page.lang]title}}</h2>
+            <p>{{site.data.content.infoSection[page.lang]email}}
+            </p>
+            <p>{{site.data.content.infoSection[page.lang]github}}</p>
+          </div>
+        </div>
+
+        <div class="small-fixed-column align-self-end">
+          {% for group in site.data.content.tools[page.lang] %}
+          <p>{{group[0]}}</p>
+
+          <ol class="list">
+            {% for item in group [1] %}
+            <li> {{item}} </li>
+            {% endfor %}
+          </ol>
+
+          {% endfor %}
+        </div>
+
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer marquee">
+    <span class="marquee-text">• 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END • 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END • 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END • 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END • 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END • 2023 ARACELI PONCE SANGA • DESARROLLADORA FRONT END •
+    </span>
+
+  </footer>
+</body>
+
+</html>

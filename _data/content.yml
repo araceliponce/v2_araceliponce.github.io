@@ -1,0 +1,124 @@
+welcome:
+  en:
+    name: araceli ponce sanga
+    after_name: frontend portfolio 2023
+  es:
+    name: araceli ponce sanga
+    after_name: portafolio de desarrollo web 2023
+
+
+nav: 
+  en:
+    projects:
+      title: My 2023 projects
+      id: projects
+    info:
+      title: My contact info
+      id: info
+  es:
+    projects:
+      title: Mis proyectos
+      id: proyectos
+    info:
+      title: Mi info de contacto
+      id: info
+
+
+
+
+
+btns:
+  en:
+    Dark: DARK MODE
+    NoDark: DAY MODE
+    Motion: ANIMATIONS
+    NoMotion: NO ANIMATIONS
+  es:
+    Dark: MODO NOCHE
+    NoDark: MODO DÍA
+    Motion: ANIMACIONES
+    NoMotion: NO ANIMACIONES
+
+
+  oppositeLang:
+    en:
+      link: /
+      label: Spanish version
+    es:
+      link: /en
+      label: Versión en inglés
+  
+
+  top:
+    en: Go to the top!
+    es: Volver arriba!
+
+
+
+
+
+links:
+  demo:
+    en: Check out the demo
+    es: Mira el sitio web
+  code:
+    en: Go to the repository
+    es: Visita el código
+
+projectsSection:
+  en:
+    id: projects
+    title: Projects
+  es: 
+    id: proyectos
+    title: Proyectos
+    
+infoSection:
+  en:
+    id: info
+    title: About me & Contact info
+    email: Puedes contactarme enviando un correo a este email <a href="mailto:aponcesanga@gmail.com">aponcesanga@gmail.com</a>
+    github: También puedes encontrarme en github como <a href="https://github.com/araceliponce/">araceliponce</a>
+  es:
+    id: info
+    title: Acerca de mí e info de contacto
+    email: Puedes contactarme enviando un correo a este email <a href="mailto:aponcesanga@gmail.com">aponcesanga@gmail.com</a>
+    github: También puedes encontrarme en github como <a href="https://github.com/araceliponce/">araceliponce</a>
+
+
+tools:
+  en:
+    I mostly work with:
+      - HTML5
+      - CSS3
+      - Sass
+      - JavaScript
+      - Jekyll & Liquid
+      - Angular & TypeScript
+      - Git & Github
+    Also have experience with:
+      - Bootstrap
+      - JQuery
+      - Firebase
+    I want to / am currently exploring:
+      - Supabase
+      - React
+  es:
+    Mayormente trabajo con:
+      - HTML5
+      - CSS3
+      - Sass
+      - JavaScript
+      - Jekyll & Liquid
+      - Angular & TypeScript
+      - Git & Github
+    También tengo experiencia con:
+      - Bootstrap
+      - JQuery
+      - Firebase
+    Y quiero/estoy actualmente explorando:
+      - Supabase
+      - React
+
+
+keywords: FLEXBOX, CSS3, ARACELI PONCE SANGA

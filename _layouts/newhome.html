@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang={{page.lang}}>
+
+{%-include head.html-%}
+
+<body class="inicio">
+
+  {%-include first-script.html-%}
+
+  <div class="loader-container">
+    <span>Araceli Ponce Sanga</span>
+    <span>Front End Developer</span>
+    <div class="loader"></div>
+  </div>
+  <script>
+
+    document.documentElement.classList.remove('no-js'); //si no tiene js activado, la clase .no-js se mantiene
+
+    //loader por tiempo + .3s
+    window.addEventListener('load', () => {
+      const loaderContainer = document.querySelector('.loader-container');
+
+      setTimeout(() => {
+        loaderContainer.classList.add('faded-out');
+      }, 300);
+    })
+  </script>
+
+  <style>
+    p strong {
+      margin-inline: .2ex;
+      border: 1px solid currentColor;
+      border-radius: 100%;
+    }
+
+    .grid-v-spaced {
+      display: grid;
+      align-content: space-between;
+    }
+
+    .justify-c-center {
+      justify-content: center;
+    }
+  </style>
+  <main class="portfolio-content ">
+
+
+    <section class="relative hero-section grid-v-spaced">
+      {%-include top-buttons.html-%}
+
+      <div class="content">
+        <h1>ARACELI PONCE</h1>
+        <h2>Desarrolladora front end</h2>
+      </div>
+
+
+      <nav>
+        <ul class="flex-row-wrap-gap1 justify-c-center">
+          {%for item in site.data.contents.navigation[page.lang]%}
+          <li>
+            <a class="button" href="#{{item[1].id}}" title="{{item[1].label}}">{{item[1].label}}</a>
+            </a>
+          </li>
+          {%endfor%}
+        </ul>
+      </nav>
+
+
+
+
+
+      <div class="random-images" aria-hidden="true">
+        <div class="centered">
+          <!-- {%-for group in site.data.ui.tools[page.lang]-%}
+          {%-for item in group [1]-%}
+          <svg class="random-image">
+            <use xlink:href="#{{item|downcase}}" />
+          </svg>
+          {%-endfor-%}
+          {%-endfor-%} -->
+
+          <img class="random-image" src="./assets/mesh-411.png" alt="" srcset="">
+          <img class="random-image" src="./assets/mesh-491.png" alt="" srcset="">
+          <img class="random-image" src="./assets/mesh-577.png" alt="" srcset="">
+          <img class="random-image" src="./assets/mesh-652.png" alt="" srcset="">
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section class="tools-section">
+      <h2>Tech stack</h2>
+      <ul class="flex-row-wrap-gap1">
+
+        {% for group in site.data.contents.tools[page.lang] %}
+        <li class="flex-col-wrap-gap1">
+          <h3>{{group[0]}}</h3>
+
+          <ul class="flex-row-wrap-gap1">
+
+            {% for item in group [1] %}
+            <li class="glass">
+              <svg aria-hidden="true">
+                <title>{{item|upcase}}</title>
+                <use xlink:href="#{{item|downcase}}" />
+              </svg>
+              <small>{{item}}</small>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </li>
+        {% endfor %}
+      </ul>
+      <style>
+        h3 {
+          text-align: start;
+        }
+
+
+        .tools-section ul {
+          text-align: center;
+        }
+
+        .tools-section .glass {
+          width: 5rem;
+          aspect-ratio: 1;
+          display: grid;
+          place-items: center;
+        }
+
+        .tools-section svg {
+          width: 3rem;
+          margin-inline: auto;
+          fill: var(--bg3);
+
+          padding: .5rem 0 0;
+        }
+      </style>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="contact-section">
+
+      {%-include calendar.html-%}
+
+    </section>
+
+  </main>
+
+
+  {%-include svgs.html-%}
+
+</body>
+
+
+
+
+</html>

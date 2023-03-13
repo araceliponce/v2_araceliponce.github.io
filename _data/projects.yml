@@ -1,0 +1,47 @@
+
+-
+  name: pasiflora
+  img: pasiflora1.png
+  link: https://araceliponce.github.io/pasiflora/catalog
+  repo_name: pasiflora
+  stack: html5, css3, bootstrap
+  tech: 
+    - html5
+    - css3
+    - bootstrap
+
+  subtitle: 
+    en: E-commerce website [Work in progress]
+    es: Sitio web de venta de plantas online [En desarrollo]
+  desc: 
+    en: Custom multipage ecommerce website [en desarrollo]
+    es: Diseño intuitivo, menús colapsables accesibles, diseño responsive   
+
+-
+  name: SupaBoard
+  img: 404
+  img_alt: Proyecto SupaBoard en desarrollo
+  link: https://araceliponce.github.io/supaboard/
+  repo_name: supaboard
+  stack: angular, supabase, scss, angular material, typescript
+
+  subtitle: 
+    en: #E-commerce website [Work in progress]
+    es: Aplicación web inspirada en Trello [En desarrollo]
+  desc: 
+    en: #Custom multipage ecommerce website [en desarrollo]
+    es: Con inicio de sesión y registro implementado, tableros múltiples, los usuarios pueden crear tableros compartidos y enviar enlaces de invitación   
+
+-
+  name: Portafolio personal
+  img: 404
+  img_alt: Proyecto portafolio en desarrollo
+  link: #
+  repo_name: araceliponce.github.io
+  stack: html5, css3, jekyll, liquid, javascript
+  subtitle: 
+    en: My web dev portfolio [Work in progress]
+    es: Mi portafolio como desarrolladora web [en desarrollo]. 
+  desc: 
+    en: Static bilingual site I created using **Jekyll**, **Liquid**, and of course **HTML5**, **CSS3** and **JavaScript**. It's still a work in progress!
+    es: Tema claro y oscuro, animaciones marquee, 

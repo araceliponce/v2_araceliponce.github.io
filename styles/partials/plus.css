@@ -1,0 +1,147 @@
+/* Loader  */
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background-color: black;
+  z-index: 77;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: opacity .1s, visibility .3s;
+
+}
+
+.no-js .loader-container {
+  display: none;
+}
+
+.loader {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background: pink;
+  background: radial-gradient(pink 90%, red);
+  animation: spin 2s linear infinite;
+}
+
+.loader+span {
+  padding-top: 1.3rem;
+}
+
+.faded-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  /* en caso de que lo use para un modal o similar */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* Switchs */
+:root {
+  --switch-height: 1.4rem;
+  --switch-width: 2.4rem;
+  --switch-circle-size: 1rem;
+  --switch-circle-offset: .2rem;
+  --switch-circle-xtranslate: calc(var(--switch-width) - var(--switch-circle-size) - var(--switch-circle-offset) - var(--switch-circle-offset))
+}
+
+.toggle,
+.toggle:before,
+.slot-label,
+.curtain {
+  transition-property: background-color, transform, visibility;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in, cubic-bezier(0.6, 0.2, 0.4, 1.5), linear;
+}
+
+.toggle:before,
+.slot,
+.slot-label {
+  display: block;
+}
+
+.toggle:before,
+.curtain {
+  position: absolute;
+}
+
+.toggle:checked,
+.curtain {}
+
+.toggle:focus {
+  outline: transparent;
+}
+
+.toggle {
+  border-radius: 100vh;
+  box-shadow: 0 0 0 .1rem inset;
+  /* inset */
+  cursor: pointer;
+  position: relative;
+  /* margin-right: 0.25em; */
+  width: var(--switch-width);
+  height: var(--switch-height);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle:before {
+  background: currentColor;
+  border-radius: 50%;
+  content: "";
+  top: var(--switch-circle-offset);
+  left: var(--switch-circle-offset);
+  width: 1rem;
+  height: 1rem;
+}
+
+.toggle:checked:before {
+  transform: translateX(var(--switch-circle-xtranslate))
+}
+
+.toggle:checked~.slot .slot-label,
+.slot-label:nth-child(2) {
+  transform: translateY(-50%) scaleY(0);
+}
+
+.toggle:checked~.slot .slot-label:nth-child(2) {
+  transform: translateY(-100%) scaleY(1);
+}
+
+.toggle:checked~.curtain {
+  transform: scaleX(1);
+}
+
+
+.slot-label {
+  transform-origin: 50% 0;
+  width: 15ch;
+  word-break: break-word;
+  font-size: .9rem;
+}
+
+.slot-label:nth-child(2) {
+  transform-origin: 50% 100%;
+}

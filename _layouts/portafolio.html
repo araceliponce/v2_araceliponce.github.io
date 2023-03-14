@@ -61,17 +61,17 @@
         </nav>
       </div>
     </section>
-    <div class="on-wide-sticky-top flex-row-wrap-gap w-100vw h-10">
+    <div class="on-wide-sticky-top flex-row-wrap-gap">
       <span>APS</span>
       <div class="flex-row-wrap-gap  inline-flex msa">
-        <input id="themeToggle" class="toggle" type="checkbox" role="switch" value="on" checked="true">
+        <input id="themeToggle" class="toggle" type="checkbox" role="switch">
         <label for="themeToggle" class="slot">
           <span class="slot-label">{{site.data.content.btns[page.lang]NoDark}}</span>
           <span class="slot-label">{{site.data.content.btns[page.lang]Dark}}</span>
         </label>
       </div>
       <div class="flex-row-wrap-gap inline-flex">
-        <input id="animationToggle" class="toggle" type="checkbox" role="switch" value="off">
+        <input id="animationToggle" class="toggle" type="checkbox" role="switch">
         <label for="animationToggle" class="slot">
           <span class="slot-label">{{site.data.content.btns[page.lang]NoMotion}}</span>
           <span class="slot-label">{{site.data.content.btns[page.lang]Motion}}</span>
@@ -79,6 +79,12 @@
       </div>
 
     </div>
+
+    <style>
+      label[for] {
+        cursor: pointer;
+      }
+    </style>
 
 
 

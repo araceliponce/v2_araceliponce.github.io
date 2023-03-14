@@ -137,7 +137,7 @@
 
 .slot-label {
   transform-origin: 50% 0;
-  width: 15ch;
+  /* width: 15ch; */
   word-break: break-word;
   font-size: .9rem;
 }

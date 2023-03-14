@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Smokum&family=Courier+Prime&display=swap');
-
 *,
 *::before,
 *::after {
@@ -174,7 +172,7 @@ li {
 
 .inline-flex {
   display: inline-flex;
-  font-size: 5rem;
+  /* font-size: 5rem; */
 }
 
 .flex-1 {
@@ -564,11 +562,17 @@ body {
   background: var(--first-bg);
   color: white;
   box-shadow: 0 10vh 0 var(--first-bg);
+  padding-top: 3rem;
 }
 
 .main>:first-child+* {
   background: #2d2df02e;
   box-shadow: 0 -100vh 0 100vh #2d2df02e;
+  gap: .5rem;
+  padding: 1.5rem 1.5rem 0;
+  /* aps y toggles */
+  left: 0;
+  right: 0;
 
 }
 

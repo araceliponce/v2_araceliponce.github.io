@@ -7,13 +7,25 @@ const page = document.documentElement;
 
 //toggles
 const themeToggle = document.getElementById('themeToggle');
-
 const animationToggle = document.getElementById("animationToggle");
 
-// const directionToggle = document.getElementById("directionToggle");
-const hero = document.querySelector('.hero');
-const marquees = document.querySelectorAll(".marquee");
-const wrapper = document.querySelector(".wrapper");
+
+window.addEventListener('load', () => {
+  console.log('ive loaded again')
+  if (['null', 'true'].includes(hasUsedDarkMode)) {
+    themeToggle.checked = true; //theme toggle checked significa sí dark mode, no checked es day mode
+  } else {
+    themeToggle.checked = false
+  }
+  if (['null', 'true'].includes(hasBeenOkWithMotion)) {
+    animationToggle.checked = true
+  } else {
+    animationToggle.checked = false
+  }
+
+})
+
+
 
 /* const { matches: motionOK } = window.matchMedia(
   '(prefers-reduced-motion: no-preference)'
@@ -90,23 +102,27 @@ if (hasBeenOkWithMotion) {
   } else {
     page.dataset.dark = 'true';
   }
-  //set the local storage item to the same value of data-dark of html/body
   hasUsedDarkMode = localStorage.setItem("hasUsedDarkMode", page.dataset.dark);
 
-}); */
+}); */  //set the local storage item to the same value of data-dark of html/body
 
 
-themeToggle.addEventListener("change", () => {
+
+// ni hasUsedDarkMode ni page.dataset.dark sirven aqui porque son strings y necesitamos un boolean parahacer y quitar check
+
+themeToggle.addEventListener("click", () => {
   if (page.dataset.dark == 'true') {
-    // themeToggle.checked = false;
-    themeToggle.setAttribute('aria-checked', 'false')
+    themeToggle.checked = false;
     page.dataset.dark = 'false';
+
   } else {
-    // themeToggle.checked = true;
-    themeToggle.setAttribute('aria-checked', 'true');
+    themeToggle.checked = true;
     page.dataset.dark = 'true';
   }
   hasUsedDarkMode = localStorage.setItem("hasUsedDarkMode", page.dataset.dark);
+
+  console.log('dark has been set to', page.dataset.dark)
+
 });
 
 
@@ -125,32 +141,25 @@ animationToggle.addEventListener('click', () => {
 }); */
 
 
-animationToggle.addEventListener('change', () => {
-
-  document.documentElement.dataset.motion === 'true' ? pauseAnimations() : playAnimations();
-
-  console.log(localStorage.getItem('hasBeenOkWithMotion'))
-  console.log(document.documentElement.dataset);
+animationToggle.addEventListener('click', () => {
+  page.dataset.motion === 'true' ? pauseAnimations() : playAnimations();
+  console.log('motion has been set to', page.dataset.motion)
 
 });
 
 function playAnimations() {
-  // animationToggle.innerText = 'animations on'
-  animationToggle.setAttribute('aria-checked', 'true')
+  animationToggle.checked = true; //usa booleans para checked, no strings
 
   localStorage.setItem("hasBeenOkWithMotion", 'true');
-  document.documentElement.dataset.motion = 'true';
+  page.dataset.motion = 'true';
+
 }
 
 function pauseAnimations() {
-  // animationToggle.innerText = 'animations off'
-  animationToggle.setAttribute('aria-checked', 'false')
-  // document.body.style.setProperty('--playState', 'paused');
-  /* document.body.style.setProperty('--cursorHPosition', '50%')
-  document.body.style.setProperty('--cursorVPosition', '50%') */
+  animationToggle.checked = false;
 
   localStorage.setItem("hasBeenOkWithMotion", 'false');
-  document.documentElement.dataset.motion = 'false';
+  page.dataset.motion = 'false';
 }
 
 

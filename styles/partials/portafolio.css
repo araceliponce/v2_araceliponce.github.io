@@ -192,7 +192,7 @@ li {
 
 
 .title {
-  line-height: .8;
+  line-height: .7;
   margin-bottom: .3em;
   letter-spacing: -0.07ex;
   /* font-family: smokum; */
@@ -204,8 +204,7 @@ li {
 } */
 
 h1 {
-  font-size: 6rem;
-  /* usar clamp */
+  font-size: clamp(4.7rem, calc(5vw + 1rem), 10vw);
   font-weight: 600;
 }
 
@@ -379,7 +378,7 @@ margin-bottom: 1rem;
 
   .project {
     background: var(--off-white);
-    padding: .3rem;
+    padding: 1rem 2rem;
     /* height: 100%; */
     /* tome el 100% de altura de la celda grid */
   }
@@ -396,12 +395,10 @@ margin-bottom: 1rem;
 
 .project h3 {
   /* text-transform: uppercase; */
-  font-size: .9rem;
   font-weight: bold;
   letter-spacing: 0;
 
-  /* font-family: smokum; */
-  font-size: 5rem;
+  font-size: clamp(3.5rem, calc(5vw + 1rem), 7vw);
   line-height: .8;
 }
 
